@@ -1,0 +1,31 @@
+<template name="tv">
+  {{#if currentUser}}
+  <h1>Recommended For You</h1>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Channel</th>
+        <th>Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each s in tvData}}
+        <tr>
+          <td>{{s.title}}</td>
+          <td>{{s.channel}}</td>
+          <td><button class="btn btn-info">Want</button>
+          <button class="btn btn-info">Rate</button></td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  <p>Do you have a tv provider? If so, give details. </p>
+  <input type="text">
+  <p>Also, explain why you made these choices.</p>
+  <textarea class="form-control" rows="5"></textarea>
+  {{else}}
+    <h2>You must log in to see your recommendations</h2>
+  {{/if}}
+</template>

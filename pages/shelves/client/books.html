@@ -1,0 +1,24 @@
+<template name="books">
+  <h1>You've Read</h1>
+  <table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Author</th>
+        <th>Your Rating</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each s in bookData}}
+				<tr>
+					<td>{{s.title}}</td>
+					<td>{{s.author}}</td>
+          <td>{{s.rating}}</td>
+				</tr>
+			{{/each}}
+		</tbody>
+  </table>
+
+  <input id="thedate" type="date">
+	<input id="thecolor" type="color">
+</template>

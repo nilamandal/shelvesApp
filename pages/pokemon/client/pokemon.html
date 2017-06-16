@@ -1,0 +1,10 @@
+<template name="pokemon">
+<h1>List of Pokemon</h1>
+  <ul>
+  {{#each pokemon in pokedex}}
+    <li> <a href="/pokemonData/{{pokemon._id}}">{{pokemon.ename}}</a></li>
+  {{/each}}
+</ul>
+  <hr>
+
+</template>
