@@ -12,5 +12,28 @@ const yourMovies = [
 ]
 
 Template.movies.helpers({
-	movieData: yourMovies
+	movies() {return Movies.find()}
+})
+Template.movies.events({
+  'click button'(element,instance){
+    const title= instance.$('#title').val();
+    const director= instance.$('#director').val();
+    const genre= instance.$('#genre').val();
+
+
+    console.log('adding '+title);
+    instance.$('#title').val("");
+    instance.$('#director').val("");
+    instance.$('#genre').val("");
+    Movies.insert({title:title, director:director, genre:genre});
+  }
+})
+
+Template.moviehelp.events({
+  'click span'(element, instance){
+    console.dir(this);
+    console.log(this);
+    console.log(this.s._id);
+    Movies.remove(this.s._id);
+  }
 })

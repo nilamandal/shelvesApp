@@ -1,25 +1,37 @@
 <template name="movies">
   <h1>You Want to See</h1>
+  <h2>Once you've seen them, remove them and then add them to your Seen page.</h2>
   <table class="table table-bordered table-striped">
 		<thead>
 			<tr>
 				<th>Title</th>
 				<th>Director</th>
-        <th>Options</th>
+        <th>Remove?</th>
 			</tr>
 		</thead>
 		<tbody>
-			{{#each s in movieData}}
-				<tr>
-					<td>{{s.title}}</td>
-					<td>{{s.director}}</td>
-          <td><button class="btn btn-info">Rate</button>
-    			<button class="btn btn-info">Remove</button></td>
-				</tr>
+			{{#each s in movies}}
+				{{> moviehelp s=s}}
 			{{/each}}
 		</tbody>
   </table>
 
+  <h1>Add any new movies you're interested in!</h1>
+  Film Title:<input type="text" id="title"><br>
+  Director:<input type="text" id="director"><br>
+  Genre:<input type="text" id="genre"><br>
+  <button id="addmovie" class="btn btn-info">Add it!</button>
+
+</template>
+
+<template name="moviehelp">
+    <tr>
+      <td>{{s.title}}</td>
+      <td>{{s.director}}</td>
+      <td><span class="glyphicon glyphicon-remove"></span></td>
+    </tr>
+</template>
+<!--
   <h3>Do you like movies?</h3>
   <select>
     <option> Yes </option>
@@ -33,5 +45,4 @@
   <h3>Really?</h3>
   <label><input type="checkbox">Yes</label>
   <label><input type="checkbox">No</label>
-  <label><input type="checkbox">Maybe</label>
-</template>
+  <label><input type="checkbox">Maybe</label>  -->

@@ -12,5 +12,31 @@ const yourBooks = [
 ]
 
 Template.books.helpers({
-	bookData: yourBooks
+	books() {return Books.find()}
+})
+
+
+Template.books.events({
+  'click button'(element,instance){
+    const title= instance.$('#title').val();
+    const auth= instance.$('#author').val();
+    const genre= instance.$('#genre').val();
+    const rating= instance.$('#rating').val();
+
+    console.log('adding '+title);
+    instance.$('#title').val("");
+    instance.$('#author').val("");
+    instance.$('#genre').val("");
+    instance.$('#rating').val("");
+    Books.insert({title:title, author:auth, genre:genre, rating:rating});
+  }
+})
+
+Template.tablehelp.events({
+  'click span'(element, instance){
+    console.dir(this);
+    console.log(this);
+    console.log(this.s._id);
+    Books.remove(this.s._id);
+  }
 })

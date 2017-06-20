@@ -6,19 +6,30 @@
 				<th>Title</th>
 				<th>Author</th>
         <th>Your Rating</th>
+        <th>Remove Book?</th>
 			</tr>
 		</thead>
 		<tbody>
-			{{#each s in bookData}}
-				<tr>
-					<td>{{s.title}}</td>
-					<td>{{s.author}}</td>
-          <td>{{s.rating}}</td>
-				</tr>
-			{{/each}}
+      {{#each s in books}}
+        {{> tablehelp s=s}}
+      {{/each}}
 		</tbody>
   </table>
+  <h1>Have you read something new?</h1>
+  Book Title:<input type="text" id="title"><br>
+  Author:<input type="text" id="author"><br>
+  Genre:<input type="text" id="genre"><br>
+  Rating:<input type="text" id="rating"><br>
+  <button id="addbook" class="btn btn-info">Add it!</button>
+<!--   <input id="thedate" type="date">
+	<input id="thecolor" type="color -->
+</template>
 
-  <input id="thedate" type="date">
-	<input id="thecolor" type="color">
+<template name="tablehelp">
+  <tr>
+    <td>{{s.title}}</td>
+    <td>{{s.author}}</td>
+    <td>{{s.rating}}</td>
+    <td><span class="glyphicon glyphicon-remove"></span></td>
+  </tr>
 </template>
