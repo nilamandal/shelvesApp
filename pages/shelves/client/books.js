@@ -28,7 +28,9 @@ Template.books.events({
     instance.$('#author').val("");
     instance.$('#genre').val("");
     instance.$('#rating').val("");
-    Books.insert({title:title, author:auth, genre:genre, rating:rating});
+    var book = {title:title, author:auth, genre:genre, rating:rating};
+    //Books.insert(book);
+    Meteor.call('books.insert',book);
   }
 })
 
@@ -37,6 +39,6 @@ Template.tablehelp.events({
     console.dir(this);
     console.log(this);
     console.log(this.s._id);
-    Books.remove(this.s._id);
+    Meteor.call('books.delete',this.s._id);
   }
 })

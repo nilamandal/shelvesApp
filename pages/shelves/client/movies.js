@@ -25,7 +25,8 @@ Template.movies.events({
     instance.$('#title').val("");
     instance.$('#director').val("");
     instance.$('#genre').val("");
-    Movies.insert({title:title, director:director, genre:genre});
+    var film= {title:title, director:director, genre:genre}
+    Meteor.call('movies.insert',film);
   }
 })
 
@@ -34,6 +35,6 @@ Template.moviehelp.events({
     console.dir(this);
     console.log(this);
     console.log(this.s._id);
-    Movies.remove(this.s._id);
+    Meteor.call('movies.delete',this.s._id);
   }
 })
