@@ -11,6 +11,11 @@ const yourMovies = [
   {title: "Midnight in Paris", director:"Woody Allen", genre:"fantasy"}
 ]
 
+Template.movies.onCreated(function moviesCreated(){
+  //this.state = new ReactiveDict();
+  Meteor.subscribe('movies');
+});
+
 Template.movies.helpers({
 	movies() {return Movies.find()}
 })
