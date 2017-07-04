@@ -11,6 +11,11 @@ const yourBooks = [
   {title: "The Republic of Thieves", author:"Scott Lynch", genre:"fantasy", rating:"5"}
 ]
 
+Template.books.onCreated(function booksCreated(){
+  //this.state = new ReactiveDict();
+  Meteor.subscribe('books');
+});
+
 Template.books.helpers({
 	books() {return Books.find()}
 })

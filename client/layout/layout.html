@@ -1,4 +1,36 @@
 <template name="layout">
+	<style>
+	ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #edf4f0;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #228B22;
+}
+	</style>
+	<ul>
+			<li><a href="{{pathFor 'home'}}">Home</a></li>
+			<li><a href="{{pathFor 'books'}}">Your Books</a></li>
+			<li><a href="{{pathFor 'movies'}}">Your Movies</a></li>
+			<li><a href="{{pathFor 'tv'}}">Your TV shows</a></li>
+	</ul>
 	<!--<style>
 	nav.navbar-inverse{
     background-color: #edf4f0;
@@ -8,7 +40,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background: #edf4f0;
+    background-color: #edf4f0;
 	}
 	li{
 		display: inline;
@@ -37,11 +69,7 @@
           </div>
 
           <div class="collapse navbar-collapse" id="navbar-collapse-1">
-              <ul class="nav navbar-nav">
-                  <li><a href="{{pathFor 'books'}}">Your Books</a></li>
-                  <li><a href="{{pathFor 'movies'}}">Your Movies</a></li>
-                  <li><a href="{{pathFor 'tv'}}">Your TV shows</a></li>
-              </ul>
+
           </div>
       </div>
   </nav>

@@ -9,7 +9,10 @@ const yourTV = [
   {title: "Master of None", channel:"Netflix", genre:"comedy"},
   {title: "It's Always Sunny in Philadelphia", channel:"FX", genre:"comedy"},
 ]
-
+Template.tv.onCreated(function tvCreated(){
+  //this.state = new ReactiveDict();
+  Meteor.subscribe('tv');
+});
 Template.tv.helpers({
 	tvData: yourTV
 })
