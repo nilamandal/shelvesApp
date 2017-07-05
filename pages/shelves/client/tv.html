@@ -1,4 +1,21 @@
 <template name="tv">
+  <style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th{
+    background-color:#c9edd8;
+  }
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  tr:hover{background-color:#c9edd8}
+  </style>
+
 <!--  {{#if currentUser}}-->
   <h1>Recommended For You</h1>
   <table class="table table-bordered table-striped">
