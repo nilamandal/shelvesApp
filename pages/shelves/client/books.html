@@ -1,4 +1,22 @@
 <template name="books">
+  <style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th{
+    background-color:#c9edd8;
+  }
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  tr:hover{background-color:#c9edd8}
+  </style>
+
+
   <h1>You've Read</h1>
   <table class="table table-bordered table-striped">
 		<thead>
@@ -30,6 +48,6 @@
     <td>{{s.title}}</td>
     <td>{{s.author}}</td>
     <td>{{s.rating}}</td>
-    <td><span class="glyphicon glyphicon-remove"></span></td>
+    <td><button id="remove" class="btn">Remove</button></td>
   </tr>
 </template>

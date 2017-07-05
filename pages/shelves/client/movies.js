@@ -36,7 +36,7 @@ Template.movies.events({
 })
 
 Template.moviehelp.events({
-  'click span'(element, instance){
+  'click button'(element, instance){
     console.dir(this);
     console.log(this);
     console.log(this.s._id);
